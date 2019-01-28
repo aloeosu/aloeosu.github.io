@@ -53,7 +53,48 @@
      overflow-x:auto;
    
      border:10px ridge blue;
-  </style>
+     <style>
+     .accordion {
+       background-color: #eee;
+       color: #444;
+       cursor: pointer;
+       padding: 18px;
+       width: 100%;
+       border: none;
+       text-align: left;
+       outline: none;
+       font-size: 15px;
+       transition: 0.4s;
+     }
+
+     .active, .accordion:hover {
+       background-color: #ccc; 
+     }
+
+     .panel {
+       padding: 0 18px;
+       display: none;
+       background-color: white;
+       overflow: hidden;
+     }
+     </style>
+       </style>
+       <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
 
     </head>
 
@@ -114,7 +155,7 @@
  <ul>
   
   
-  <li><button class="collapsible">Open Collapsible<a href="https://github.com/aloeosu/Khan-Academy-Projects/blob/master/addesign.js">Ad Design</a></button></li>
+  <li><button class="accordion">Ad Design<div class="panel"><a href="https://github.com/aloeosu/Khan-Academy-Projects/blob/master/addesign.js">Ad Design</a></div></button></li>
   <li><a href="https://github.com/aloeosu/Khan-Academy-Projects/blob/master/mountainrange.js">Mountain Range</a></li>
   <li><a href="https://github.com/aloeosu/Khan-Academy-Projects/blob/master/fishtank.js">Fish Tank</a></li>
    <li><a href="https://github.com/aloeosu/Khan-Academy-Projects/blob/master/makeitrain.js">Make It Rain</a></li>
